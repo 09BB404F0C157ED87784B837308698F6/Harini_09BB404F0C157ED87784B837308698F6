@@ -1,7 +1,24 @@
-def leapyear(num):
-  if(num%4==0):
-      print(num,"IS LEAP YEAR")
-  else:
-       print(num,"IS NOT A LEAP YEAR")
-num=int(input("ENTER A YEAR:"))    
-leapyear(num)
+class BankAccount:
+  def __init__ (self,__accountNumber,__accountHolderName,__initialBalance=0):
+    self.__acccountNumber=__accountNumber
+    self.__accountHolder=__accountHolderName
+    self.__AccountBalance=__initialBalance
+    
+  def depositMoney(self,amount):
+    self.__AccountBalance +=amount
+    print("Rs.",amount," has been deposited in your account.")
+    
+  def withdrawMoney(self,amount):
+   if amount>self.__AccountBalance:
+     print("insufficient Balance")
+   else:
+    self.__AccountBalance -=amount
+    print("Rs.",amount," has beenwithdrawn from your account")
+
+  def checkBalance(self):
+    print("current balance: ",self.__AccountBalance)
+
+obj=BankAccount(2838203938,"karthika")
+obj.depositMoney(5000)
+obj.withdrawMoney(2000)
+obj.checkBalance()
