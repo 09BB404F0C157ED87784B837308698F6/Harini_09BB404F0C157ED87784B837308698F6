@@ -1,8 +1,27 @@
-def factorial(n):
- if n==0 or n==1:
-   return 1
- else:
-   return n* factorial(n-1)
-number=int(input("ENTER A VALUE:"))
-fact =factorial(number)
-print ("THE FACTORIAL OF",number,"IS", fact)
+#leap year
+
+
+def leapyear (year): 
+
+  if(year%4==0 and year%100!==0):
+
+    return True
+  elif(year%400==0):
+
+    return True
+
+
+  else:
+
+     return False
+
+
+year=int(input("ENTER A YEAR: "))
+if leapyear(year):
+
+print(year," is a leap year.")
+
+
+else:
+
+print(year," is not a leap year.")
